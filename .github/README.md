@@ -1,4 +1,3 @@
-> ⚠️ **IN PROGRESS**
 # sh-tick
 timer using [dateutils](https://formulae.brew.sh/formula/dateutils).
 <br>
