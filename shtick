@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+current(){ date +"%T"; }
+dest=$(echo $1 | sed "s/./&:/2;s/$/:00/")
+dur(){ datediff $(current) $dest -f '%H:%M:%S'; }
+dur24(){ dateadd 24:00:00 $(datediff $(current) $dest); }
+deco(){ echo -n " == ${dest} ==  $(dur)"; }
+deco24(){ echo -n " == ${dest} ==  $(dur24)"; }
+alarm(){ for i in {1..20};{ echo -en \\a; sleep 1.2;}; }
+fini(){ echo fini; sleep 27.5; }
+
+trap 'echo -e "\r"; tput cnorm; exit 0' INT
+tput civis
+while [[ $(current) != $dest ]]
+do
+	[[ $(datediff $(current) $dest | cut -c 1) = "-" ]] && deco24 || deco
+	sleep .1
+	echo -en "\r\033[K"
+done
+alarm & fini
+tput cnorm
