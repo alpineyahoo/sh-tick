@@ -4,13 +4,15 @@ timer using [dateutils](https://formulae.brew.sh/formula/dateutils).
 24-hour clock.
 <br>
 I didn't know the word "[shtick](https://en.wikipedia.org/wiki/Shtick)" ever.
-## Installation
+## Installation Example
 
 ```
 git clone https://github.com/alpineyahoo/sh-tick.git
+cp ./sh-tick/shtick /usr/local/bin/shtick
+chmod +x /usr/local/bin/shtick
 ```
 
-## Example
+## Use
 
 ```
 situation: current_date = 14:52
