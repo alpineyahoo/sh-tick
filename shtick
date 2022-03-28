@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+t1=$(echo $1 | sed "s/./&:/2;s/$/:00/")
+s1=$(gdate -d $t1 +"%s")
+ft1=$(gdate -d $t1 +"%F %T")
+ft2=$(dadd "${ft1}" 1d)
+s2=$(gdate -d $ft2 +"%s")
+
+curr(){ gdate +"%s"; }
+[[ $(curr) -lt $s1 ]] && dest=$s1 || dest=$s2
+dur(){ ddiff -i %s $(curr) $dest -f '%H:%M:%S'; }
+deco(){ echo "\n == ${t1} ==  $(dur)"; }
+fini(){ echo "\n == ${t1} ==  fini"; false; }
+msg(){ [[ $(curr) -le $dest ]] && deco || fini; }
+
+export $(compgen -v)
+export -f $(compgen -A function)
+
+watch -n .2 -b -t msg
