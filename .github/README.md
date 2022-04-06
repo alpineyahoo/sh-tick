@@ -1,7 +1,7 @@
 # sh-tick
 timer using [dateutils](https://formulae.brew.sh/formula/dateutils).
 <br>
-24-hour clock.
+24-hour clock timer.
 <br>
 I didn't know the word "[shtick](https://en.wikipedia.org/wiki/Shtick)" ever.
 ## Installation Example
