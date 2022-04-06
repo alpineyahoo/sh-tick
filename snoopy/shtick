@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+t1=$(echo $1 | sed "s/./&:/2;s/$/:00/")
+s1=$(gdate -d $t1 +"%s")
+s2=$(($s1 + 86400))
+
+curr(){ gdate +"%s"; }
+[[ $(curr) -lt $s1 ]] && dest=$s1 || dest=$s2
+dur(){ ddiff -i %s $(curr) $dest -f '%H:%M:%S'; }
+deco(){ cowsay -f snoopysleep "== ${t1} ==  $(dur)"; }
+fini(){ cowsay -f snoopy "== ${t1} ==  fini"; false; }
+msg(){ [[ $(curr) -le $dest ]] && deco || fini; }
+
+export $(compgen -v)
+export -f $(compgen -A function)
+
+watch -n .2 -b -t msg
