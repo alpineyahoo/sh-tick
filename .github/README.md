@@ -50,6 +50,9 @@ $ shtick 0600
    _\|_\|_\/(__\__)\__\//_|(_
 
 ```
- 
+
+## Memo
+You need cowsay to use snoopy version; run `npm install -g cowsay`
+
 ## Log
 Check [log](/log.md)
