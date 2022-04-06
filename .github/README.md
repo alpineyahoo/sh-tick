@@ -8,7 +8,7 @@ I didn't know the word "[shtick](https://en.wikipedia.org/wiki/Shtick)" ever.
 
 ```shell
 $ git clone https://github.com/alpineyahoo/sh-tick.git
-$ cp ./sh-tick/shtick /usr/local/bin/shtick
+$ cp ./sh-tick/snoopy/shtick /usr/local/bin/shtick
 $ chmod +x /usr/local/bin/shtick
 ```
 
