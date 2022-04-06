@@ -9,6 +9,7 @@ I didn't know the word "[shtick](https://en.wikipedia.org/wiki/Shtick)" ever.
 ```shell
 $ git clone https://github.com/alpineyahoo/sh-tick.git
 $ cp ./sh-tick/snoopy/shtick /usr/local/bin/shtick
+# If you like simple screen, then replace snoopy with v3
 $ chmod +x /usr/local/bin/shtick
 ```
 
