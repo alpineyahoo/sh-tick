@@ -52,7 +52,7 @@ $ shtick 0600
 ```
 
 ## Memo
-You need cowsay to use snoopy version; run `npm install -g cowsay`
+You need [cowsay](https://www.npmjs.com/package/cowsay) to use snoopy version; run `npm install -g cowsay`
 
 ## Log
 Check [log](/log.md)
